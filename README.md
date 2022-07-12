@@ -1,4 +1,7 @@
-# lbc test 
+# Custom Fizzbuzz REST Server
+
+This is a fully customisable fizzbuzz using a Gin REST server.
+
 
 ## charles 
 
@@ -12,4 +15,4 @@ go get .
 
 go run .
 
-curl http://localhost:8080/fizzbuzz/15
+curl http://localhost:8080/custom-fizzbuzz
