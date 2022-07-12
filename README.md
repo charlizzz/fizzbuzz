@@ -30,4 +30,4 @@ This is a fully customizable fizzbuzz app using a Gin REST server with 5 paramet
 - Missing dockerfile
 - Missing gin server settings
 - Missing logging / tracing (with OTEL)
-- Missing Versioning of endpoint
+- Missing Versioning of endpoint [(semver.org)](https://semver.org/)
