@@ -1,0 +1,22 @@
+# This file
+.dockerignore
+
+# Git files
+.git/
+.gitignore
+
+# VS Code config dir
+.vscode/
+*.code-workspace
+
+# Docker configuration files
+docker/
+
+# Log files
+logs/
+
+# ENV file
+.env
+
+# Readme file
+README.md
