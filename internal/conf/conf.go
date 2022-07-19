@@ -1,9 +1,10 @@
 package conf
 
 import (
-	"log"
 	"os"
 	"strconv"
+
+	"github.com/rs/zerolog/log"
 )
 
 const (
@@ -14,9 +15,10 @@ const (
 type Config struct {
 	Host string
 	Port string
+	Env  string
 }
 
-func NewConfig() Config {
+func NewConfig(env string) Config {
 	host, ok := os.LookupEnv(hostKey)
 	if !ok || host == "" {
 		logAndPanic(hostKey)
@@ -32,10 +34,15 @@ func NewConfig() Config {
 	return Config{
 		Host: host,
 		Port: port,
+		Env:  env,
 	}
 }
 
+func NewTestConfig() Config {
+	testConfig := NewConfig("dev")
+	return testConfig
+}
+
 func logAndPanic(envVar string) {
-	log.Println("ENV variable not set or value not valid: ", envVar)
-	panic(envVar)
+	log.Panic().Str("envVar", envVar).Msg("ENV variable not set or value not valid")
 }

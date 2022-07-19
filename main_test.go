@@ -2,6 +2,7 @@ package main
 
 import (
 	"fizzbuzz/internal/conf"
+	"fizzbuzz/internal/server"
 
 	"net/http"
 	"net/http/httptest"
@@ -63,7 +64,7 @@ func Test_fizzbuzz_handler(t *testing.T) {
 	}
 
 	gin.SetMode(gin.TestMode)
-	router := setRouter(conf.NewConfig())
+	router := server.Start(conf.NewConfig())
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
